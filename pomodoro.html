@@ -1,0 +1,52 @@
+
+<html><script src="http://1.2.3.4/bmi-int-js/bmi.js?version=1332944399" language="javascript"></script>
+<head>
+<title>Pomodoro</title>
+<link rel="stylesheet" type="text/css" href="norjekudo.css" />
+<script src="pomodoro.js"></script>
+<script src="mustache.js"></script>
+<script src="norjekudo.js"></script>
+<script id="templatePomodoros" type="text/html">
+	<table>
+		<tr>
+			<th>Pomodoro</th>
+			<th>Start</th>
+		</tr>
+		{{#pomodoros}}
+		<tr>
+			<td>{{action}}</td>
+			<td>{{start_date}}</td>
+		</tr>
+		{{/pomodoros}}
+	</table>
+</script>
+</head>
+<body>
+<div id="bignumber" style="text-align:center;font-size:30pt"></div>
+<input id="txtPomodoro" type="text" size="100" /><br/>
+<input type="button" onclick="start_pomodoro();" style="width:150px;" value="Start Pomodoro" />
+<span id="pomodoro_status"></span><br/>
+<input type="button" onclick="start_break();" style="width:150px;" value="Start Break" />
+<span id="break_status"></span>
+</br>
+<input type="button" onclick="start_tea();" style="width:150px;" value="Start Tea" />
+<span id="tea_status"></span>
+<div id="container"></div>
+<br/>
+<input type="button" onclick="clearPomodoros();" style="width:150px;" value="Clear Pomodoros" />
+<input type="button" onclick="exportPomodoros();" style="width:150px;" value="Export Pomodoros" />
+<input type="button" onclick="showImport();" style="width:150px;" value="Import Pomodoros" />
+<div id="export"></div>
+<div id="divImport" style="display:none">
+    <textarea id="txtImport"></textarea><br/>
+    <a href="javascript:importPomodoros()">Import</a>
+    <a href="javascript:cancelImport()">Cancel</a>
+</div>
+</body>
+</html>
+<script>
+    init();
+</script>
+<script language="javascript"><!--
+bmi_SafeAddOnload(bmi_load,"bmi_orig_img",0);//-->
+</script>
