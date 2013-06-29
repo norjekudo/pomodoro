@@ -1,6 +1,6 @@
 var norjekudo = {};
     
-function padZero(i) {
+norjekudo.padZero = function (i) {
     var out = "";
     if (i < 10) {
         out = "0" + i.toString();
@@ -14,9 +14,9 @@ norjekudo.getDateTime = function () {
     var out = "";
     var d = new Date();
     var out = out + d.getFullYear().toString() + "-";
-    var out = out + padZero(d.getMonth() + 1) + "-";
-    var out = out + padZero(d.getDate()) + " ";
-    var out = out + padZero(d.getHours()) + ":";
-    var out = out + padZero(d.getMinutes());
+    var out = out + norjekudo.padZero(d.getMonth() + 1) + "-";
+    var out = out + norjekudo.padZero(d.getDate()) + " ";
+    var out = out + norjekudo.padZero(d.getHours()) + ":";
+    var out = out + norjekudo.padZero(d.getMinutes());
     return out;
 }
